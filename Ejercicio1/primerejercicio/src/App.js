@@ -18,6 +18,9 @@ class App extends Component {
   modalInsertar = () => {
     this.setState({ modalInsertar: !this.state.modalInsertar })
   }
+  handleChange = e=>{
+    
+  }
   componentDidMount() {
     this.peticionGet();
   }
