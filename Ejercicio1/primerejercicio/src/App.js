@@ -91,7 +91,6 @@ class App extends Component {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">ID</th>
               <th scope="col">NOMBRE</th>
               <th scope="col">EDAD</th>
               <th scope="col">ESPECIE</th>
@@ -102,7 +101,6 @@ class App extends Component {
             {this.state.mascota.map(mascota => {
               return (
                 <tr>
-                  <td>{mascota._id}</td>
                   <td>{mascota.nombre}</td>
                   <td>{mascota.edad}</td>
                   <td>{mascota.especie}</td>
@@ -134,9 +132,6 @@ class App extends Component {
           </ModalHeader>
           <ModalBody>
             <div className='form-group'>
-              <label htmlFor='id'>Id</label>
-              <input className='form-control' type='text' name="_id" readOnly onChange={this.handleChange} value={form ? form._id : '-'} />
-              <br />
               <label htmlFor='nombre'>Nombre</label>
               <input className='form-control' type='text' name="nombre" onChange={this.handleChange} value={form ? form.nombre : ''} />
               <br />
