@@ -4,28 +4,21 @@ function Validacion(text) {
     text = text.toLowerCase().replace(re, '');
     var len = text.length;
     let arregloPalindromos = [];
-    for (var i = 4; i <= len; i++) {
+    for (var i = 0; i <= len; i++) {
         for (var j = 0; j < len; j++) {
-            newText = text.substring(j, i);
-            let resultado = palindrome(newText)
-            if (resultado) {
-                arregloPalindromos.push(newText)
-            }
+            palindrome(text.substring(j, i)) && arregloPalindromos.push(text.substring(j, i))
         }
     }
     arregloPalindromos = arregloPalindromos.filter(function(item, index, array) {
         return array.indexOf(item) === index;
       })
     console.log('el total de palindromos son: ' + arregloPalindromos.length);
-    console.log('los palindromos encontrados son: ' + arregloPalindromos)
+    console.log(arregloPalindromos)
 }
 
 function palindrome(textPalindromo) {
     if (textPalindromo.length > 3) {
-        let reverse = textPalindromo.split('').reverse().join('');
-        if (reverse === textPalindromo) {
-            return true;
-        }
+        return (textPalindromo.split('').reverse().join('') === textPalindromo);
     }
     return false;
 }
